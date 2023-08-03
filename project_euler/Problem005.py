@@ -15,4 +15,4 @@ for k in range(2,21):
         num.append(k)
     else:
         for i in div:
-            
+            a
