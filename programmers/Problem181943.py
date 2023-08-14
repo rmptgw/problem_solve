@@ -15,11 +15,13 @@
 # 입출력 예 #2
 # 예제 2번의 my_string에서 인덱스 7부터 overwrite_string의 길이만큼에 해당하는 부분은 "29b8UYP"이고 이를 "merS123"로 바꾼 "ProgrammerS123"를 return 합니다.
 def solution(my_string, overwrite_string, s):
-    str = ''
     answer = ''
-    for i in range(s,s+len(overwrite_string)):
-        str = str + my_string[i]
-    
-    answer = my_string.replace(str, overwrite_string)
+    str = ''
+    # str = my_string[s:s+len(overwrite_string)]
+    str_a = my_string[0:s]
+    str_b = my_string[s+len(overwrite_string):]
+    answer = str_a + overwrite_string + str_b
 
     return answer
+
+print(solution('aaaaaa','bbb',3))
