@@ -29,17 +29,18 @@
 def solution(arr, queries):
     answer = []
     
-    for i in range(len(queries)):
-        # print('s =', queries[i][0], 'e =', queries[i][1], 'k =', queries[i][2])
-        for j in range(len(arr)):
-            print(arr[j])
-            if arr[j] < queries[i][0] :
-                continue
-            elif arr[j] > queries[i][1] :
-                continue
-            else :
-                if arr[j] % queries[i][2] == 0 :
-                    arr[j] = arr[j] + 1
+    for j in range(len(queries)) :
+        s = queries[j][0]
+        e = queries[j][1]
+        k = queries[j][2]
+
+        for i in range(s, e + 1):
+            # print(i)
+            if i % k == 0 :
+                # print('k = ', k)
+                arr[i] = arr[i] + 1
+                
+                
     
     answer = arr
     
